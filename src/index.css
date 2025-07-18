@@ -1,0 +1,85 @@
+*{
+  box-sizing: border-box;
+}
+
+h1{
+  text-align: center;
+}
+form {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  background-color: #f5efef;
+  font-family: Arial, sans-serif;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 10px 0 5px 0;
+  border: 1px solid #c9c8c8;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input:focus {
+  border-color: #5020b8;
+  outline: none;
+  box-shadow: 0 0 5px #461e9c;
+}
+
+.password-wrapper {
+  position: relative;
+  margin: 10px 0 5px 0;
+}
+
+.password-input {
+  width: 100%;
+  padding-right: 60px; 
+}
+
+.show-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #5a46d9;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.show-password:hover {
+  color: #470c87;
+}
+
+p {
+  color: red;
+  font-size: 13px;
+  margin: 3px 0 10px 0;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #591eb8;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e088e;
+}
+
+
