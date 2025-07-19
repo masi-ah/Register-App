@@ -1,4 +1,4 @@
-import RegisterForm from './components/RegisterForm';
+import RegisterForm from '@/components/RegisterForm';
 
 const App = () => {
   return (
@@ -6,7 +6,7 @@ const App = () => {
       <h1>Register</h1>
       <RegisterForm/>
     </div>
-  );
-};
+  )
+}
 
-export default App
+export default App;

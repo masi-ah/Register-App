@@ -76,7 +76,7 @@ const RegisterForm = () => {
         type="password"
         placeholder="Confirm Password"
         {...register("confirmPassword", {
-          required: "Confirm Password is required",
+          required: "Confirm Password is required!",
           validate: value =>
             value === watch('password') || "Passwords do not match"
         })}
@@ -88,7 +88,7 @@ const RegisterForm = () => {
 
      {formData && (
       <div>
-        <h3>Submited Data:</h3>
+        <h3 style={{color:"green"}}>Signup successful</h3>
         <ul>
           <li><strong>Name:</strong> {formData.firstName}</li>
           <li><strong>Last name:</strong> {formData.lastName}</li>
