@@ -1,10 +1,19 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const RegisterForm = () => {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, watch, trigger, formState: { errors } } = useForm();
   const [formData, setFormData] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
+
+  const password = watch("password");
+  const confirmPassword = watch("confirmPassword");
+
+  useEffect(() => {
+    if (confirmPassword) {
+      trigger("confirmPassword");
+    }
+  }, [password]);
 
   const onSubmit = (data) => {
     setFormData(data);
@@ -17,6 +26,7 @@ const RegisterForm = () => {
           placeholder="First Name" 
           {...register("firstName", { 
             required: "First name is required!",
+            validate: value => value.trim() !== "" || "First name cannot be just spaces",
             minLength: { value: 3, message: "Minimum 3 characters" },
             maxLength: { value: 255, message: "Maximum 255 characters" }
           })} 
@@ -27,6 +37,7 @@ const RegisterForm = () => {
           placeholder="Last Name" 
           {...register("lastName", { 
             required: "Last name is required!",
+            validate: value => value.trim() !== "" || "First name cannot be just spaces",
             minLength: { value: 3, message: "Minimum 3 characters" },
             maxLength: { value: 255, message: "Maximum 255 characters" }
           })} 
@@ -39,7 +50,7 @@ const RegisterForm = () => {
             required: "Phone number is required!",
             pattern: {
               value: /^(?:\+98|0)9\d{9}$/,
-              message: "Phone number must be a valid 11-digit number starting with 09",
+              message: "Phone number must be a valid 11-digit number starting with 09 or +98",
             },
           })}
         />
